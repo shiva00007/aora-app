@@ -3,7 +3,6 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
-  TouchableOpacity,
   ImageBackground,
   Image,
 } from "react-native";
@@ -11,7 +10,7 @@ import React, { useState } from "react";
 import { Video, ResizeMode } from "expo-av";
 
 import * as Animatable from "react-native-animatable";
-import { TouchableOpacity } from "react-native-gesture-handler";
+
 import { icons } from "@/constants";
 const Trending = ({ posts }) => {
   const [activeItem, setActiveItem] = useState(posts[0]);
