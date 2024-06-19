@@ -8,7 +8,7 @@ import {
   Alert,
 } from "react-native";
 
-import { icons, images } from "../constants";
+import { icons } from "../constants";
 import { router, usePathname } from "expo-router";
 
 const SearchInput = ({ initialQuery }) => {

@@ -8,8 +8,10 @@ import { RefreshControl } from "react-native-gesture-handler";
 import { getAllPosts, getLatestPosts } from "@/lib/appwrite";
 import useAppWrite from "@/lib/useAppWrite";
 import VideoCard from "@/components/VideoCard";
+import { useGlobalContext } from "@/context/globalProvider";
 
 const Home = () => {
+  const { user, setUser, setIsLoggedIn } = useGlobalContext();
   const [refreshing, setRefreshing] = useState(false);
 
   const { data: posts, refetch } = useAppWrite(getAllPosts);
@@ -26,7 +28,7 @@ const Home = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
-        data={[{ id: 1, id: 2, id: 3 }]}
+        data={(item) => item.$id}
         keyExtractor={(item) => item.id}
         renderItem={(item) => <VideoCard video={item} />}
         ListHeaderComponent={() => (
@@ -34,9 +36,11 @@ const Home = () => {
             <View className="justify-between items-start flex-row mb-6">
               <View>
                 <Text className="font-pmedium text-sm text-gray-100">
-                  Welcome Back
+                  Welcome Back ,
                 </Text>
-                <Text className="text-2xl font-semibold text-white">Shiva</Text>
+                <Text className="text-2xl font-semibold text-white">
+                  {user?.username}
+                </Text>
               </View>
               <View className="mt-1.5">
                 <Image
