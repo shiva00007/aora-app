@@ -5,7 +5,7 @@ import SearchInput from "@/components/SearchInput";
 import Trending from "@/components/Trending";
 import EmptyState from "@/components/EmptyState";
 import { RefreshControl } from "react-native-gesture-handler";
-import { getAllPosts } from "@/lib/appwrite";
+import { getAllPosts, getLatestPosts } from "@/lib/appwrite";
 import useAppWrite from "@/lib/useAppWrite";
 import VideoCard from "@/components/VideoCard";
 
@@ -13,6 +13,7 @@ const Home = () => {
   const [refreshing, setRefreshing] = useState(false);
 
   const { data: posts, refetch } = useAppWrite(getAllPosts);
+  const { data: LatestPosts } = useAppWrite(getLatestPosts);
 
   //to refetch the video
   const onRefresh = async () => {
@@ -52,7 +53,7 @@ const Home = () => {
               <Text className="text-gray-100 text-lg font-pregular mb-3">
                 Latest Videos
               </Text>
-              <Trending posts={[{ id: 1 }, { id: 2 }, { id: 3 }] ?? []} />
+              <Trending posts={LatestPosts ?? []} />
             </View>
           </View>
         )}
