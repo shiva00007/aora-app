@@ -7,8 +7,7 @@ import {
   Alert,
 } from "react-native";
 import React, { useState } from "react";
-import { Link, Stack, router } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { Link, router } from "expo-router";
 import { images } from "../../constants";
 import FormField from "@/components/FormField";
 import CustomButton from "@/components/CustomButton";

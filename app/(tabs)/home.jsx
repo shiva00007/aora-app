@@ -1,10 +1,17 @@
-import { View, Text, SafeAreaView, FlatList, Image, Alert } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  FlatList,
+  Image,
+  Alert,
+  RefreshControl,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import { images } from "@/constants";
 import SearchInput from "@/components/SearchInput";
 import Trending from "@/components/Trending";
 import EmptyState from "@/components/EmptyState";
-import { RefreshControl } from "react-native-gesture-handler";
 import { getAllPosts, getLatestPosts } from "@/lib/appwrite";
 import useAppWrite from "@/lib/useAppWrite";
 import VideoCard from "@/components/VideoCard";
@@ -28,8 +35,8 @@ const Home = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
-        data={(item) => item.$id}
-        keyExtractor={(item) => item.id}
+        data={posts}
+        keyExtractor={(item) => item.$id}
         renderItem={(item) => <VideoCard video={item} />}
         ListHeaderComponent={() => (
           <View className="my-6 px-4 space-y-6">
