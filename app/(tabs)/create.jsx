@@ -15,7 +15,7 @@ import CustomButton from "@/components/CustomButton";
 import * as ImagePicker from "expo-image-picker";
 import { router } from "expo-router";
 import { useGlobalContext } from "@/context/globalProvider";
-import { crateVideo } from "@/lib/appwrite";
+import { createVideo } from "@/lib/appwrite";
 
 const Create = () => {
   const { user } = useGlobalContext();
@@ -29,7 +29,7 @@ const Create = () => {
   });
 
   const openPicker = async (selectType) => {
-    let result = await ImagePicker.launchImageLibraryAsync({
+    const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes:
         selectType === "image"
           ? ImagePicker.MediaTypeOptions.Images
@@ -37,6 +37,7 @@ const Create = () => {
       aspect: [4, 3],
       quality: 1,
     });
+    console.log(result);
 
     if (!result.canceled) {
       if (selectType === "image") {
@@ -52,12 +53,18 @@ const Create = () => {
     }
   };
   const submit = async () => {
-    if (!form.title || form.thumbnail || form.prompt || form.video) {
+    if (
+      form.title === "" ||
+      !form.thumbnail ||
+      form.prompt === "" ||
+      !form.video
+    ) {
       Alert.alert("Please Fill the All Fields");
+      return;
     }
     setUpLoading(true);
     try {
-      await crateVideo({
+      await createVideo({
         ...form,
         userId: user.$id,
       });
@@ -78,9 +85,9 @@ const Create = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
-      <ScrollView className="px-4 my-6">
-        <Text className="text-white text-2xl font-psemibold">
-          Upload a Vidoe
+      <ScrollView className="px-4 my-6 mt-14">
+        <Text className="text-white text-2xl font-psemibold mt-4">
+          Upload a Video
         </Text>
         <FormField
           title="video title"
@@ -115,7 +122,7 @@ const Create = () => {
         </View>
         <View className="mt-7 space-y-2">
           <Text className="text-base text-gray-100 font-pmedium">
-            Upload a Video
+            Upload a Thumbnail
           </Text>
           <TouchableOpacity onPress={() => openPicker("image")}>
             {form.thumbnail ? (
@@ -145,12 +152,14 @@ const Create = () => {
           placeholder="The AI Prompt of your Video"
           otherStyles="mt-10"
         />
-        <CustomButton
-          title="Submit and Publish"
-          handlePress={submit}
-          otherStyles="mt-7"
-          isLoading={uploading}
-        />
+        <View className="mt-8">
+          <CustomButton
+            title="Submit and Publish"
+            handlePress={submit}
+            containerStyles="mt-7"
+            isLoading={uploading}
+          />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

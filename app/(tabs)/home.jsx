@@ -7,7 +7,7 @@ import {
   Alert,
   RefreshControl,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { images } from "@/constants";
 import SearchInput from "@/components/SearchInput";
 import Trending from "@/components/Trending";
@@ -34,7 +34,9 @@ const Home = () => {
 
   return (
     <SafeAreaView className="bg-primary h-full">
+      {/* Verical List*/}
       <FlatList
+        className="mt-10"
         data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={(item) => <VideoCard video={item} />}
@@ -64,7 +66,9 @@ const Home = () => {
               <Text className="text-gray-100 text-lg font-pregular mb-3">
                 Latest Videos
               </Text>
+              {/* horizaonal */}
               <Trending posts={LatestPosts ?? []} />
+              {/* horizaonal */}
             </View>
           </View>
         )}
