@@ -1,50 +1,46 @@
-# Welcome to your Expo app 👋
+# Aora
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Aora Mobile App](https://drive.google.com/uc?id=1kEWpIpW6u8pKmM7vm3Th3-4OAWl7sakf)
 
-## Get started
+## 🤖 Introduction
+Aora is an innovative social media platform for sharing AI-generated videos. This mobile application, built with React Native, provides an immersive user experience for creating, posting, and discovering AI-generated video content. Perfect for developers looking to enhance their portfolio with a sophisticated and interactive mobile application.
 
-1. Install dependencies
+## ⚙️ Tech Stack
+- React Native
+- NativeWind
+- Appwrite for Authentication and Storage
+- Animatable For Animated Design 
 
-   ```bash
-   npm install
-   ```
+## 🔋 Features
+👉 **Secure Authentication**: Implemented secure sign-in and sign-up using Appwrite Authentication, ensuring user data security and seamless access.
 
-2. Start the app
+👉 **Dynamic Video Management**: Users can create, read, update, and delete their video posts, providing complete control over their content.
 
-   ```bash
-    npx expo start
-   ```
+👉 **Customizable Thumbnails**: Allows users to upload custom thumbnail images for their videos, enhancing visual appeal.
 
-In the output, you'll find options to open the app in a
+👉 **Video Posting**: Easy video posting process with options to add AI prompts and thumbnail images, ensuring a smooth content creation experience.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+👉 **Home Page**: Features a bottom navigation bar with a Home Page displaying trending and latest videos, promoting content discovery.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+👉 **Custom Search Functionality**: Enables users to search for videos based on keywords, improving content accessibility and user engagement.
 
-## Get a fresh project
+👉 **User Profiles**: Displays user profiles with their username and posted videos, promoting community and interaction.
 
-When you're ready, run:
+👉 **Interactive Experience**: Engaging animations and dynamic elements for an enhanced user experience.
 
-```bash
-npm run reset-project
-```
+👉 **Responsive Design**: Optimized for various mobile devices, providing a consistent and intuitive user experience.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🌟 Highlights
+- **Authentication**: Secure sign-in and sign-up with Appwrite Authentication.
+- **Dynamic Content**: Perform all CRUD operations on video posts.
+- **Customizable UI**: Upload custom thumbnail images for videos.
+- **Video Posting**: Easy posting process with AI prompts and thumbnail options.
+- **Content Discovery**: Home Page with trending and latest videos.
+- **Search Functionality**: Custom search for videos based on keywords.
+- **User Profiles**: Displays user details and their posted videos.
+- **Responsive UI**: Optimized for all mobile devices with NativeWind.
+- **User Engagement**: Enhanced with interactive and dynamic animations.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Enhance your skills by developing this comprehensive social media platform for AI-generated videos, integrating modern technologies to create an immersive and user-friendly mobile application.
